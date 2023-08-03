@@ -13,8 +13,8 @@
                 <!--end::Sidebar mobile toggle-->
                 <!--begin::Logo-->
                 <a href="../dist/index.html" class="app-sidebar-logo">
-                    <img alt="Logo" src="{{asset ('media/avatars/undipp.png')}}" class="h-30px theme-light-show" />
-                    <img alt="Logo" src="{{asset ('media/avatars/undipp.png')}}" class="h-30px theme-dark-show" />
+                    <img alt="Logo" src="{{asset ('media/avatars/undipp.png')}}" class="h-50px theme-light-show" />
+                    <img alt="Logo" src="{{asset ('media/avatars/undipp.png')}}" class="h-50px theme-dark-show" />
                 </a>
                 <!--end::Logo-->
                 <!--begin::Sidebar toggle-->
@@ -78,10 +78,42 @@
                 <div class="app-navbar-item me-lg-1">
                     <!--begin::Menu- wrapper-->
                     <div class="btn btn-icon btn-custom btn-color-gray-600 btn-active-color-primary w-35px h-35px w-md-40px h-md-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                        <i class="ki-duotone ki-graph-3 fs-1">
+                        <i class="fa fa-bell fs-1"></i>
                             <span class="path1"></span>
                             <span class="path2"></span>
                         </i>
+                         <!--begin::User account menu-->
+                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
+                        <!--begin::Menu item-->
+                        <div class="menu-item px-5">
+                            <a href="../dist/account/overview.html" class="menu-link px-5">Notifikasi 1</a>
+                        </div>
+                        <!--end::Menu item-->
+                        <!--begin::Menu item-->
+                        <div class="menu-item px-5">
+                            <a href="../dist/apps/projects/list.html" class="menu-link px-5">
+                                <span class="menu-text">Notifikasi 3</span>
+                                <span class="menu-badge">
+                                    <span class="badge badge-light-danger badge-circle fw-bold fs-7">3</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--end::Menu item-->
+
+
+                        <!--begin::Menu separator-->
+                        <div class="separator my-2"></div>
+                        <!--end::Menu separator-->
+
+
+                        <!--begin::Menu item-->
+                        <div class="menu-item px-5 my-1">
+                            <a href="../dist/account/settings.html" class="menu-link px-5">Rekap Notifikasi</a>
+                        </div>
+                        <!--end::Menu item-->
+
+                    </div>
+                    <!--end::User account menu-->
                     </div>
 
                     <!--end::Menu wrapper-->
@@ -92,7 +124,7 @@
                 <div class="app-navbar-item ms-3 ms-lg-4 me-lg-2" id="kt_header_user_menu_toggle">
                     <!--begin::Menu wrapper-->
                     <div class="cursor-pointer symbol symbol-30px symbol-lg-40px" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                        <img src="{{asset ('media/avatars/undipp.png')}}" alt="user" />
+                        <img src="{{asset ('media/avatars/gifhar.png')}}" alt="user" />
                     </div>
                     <!--begin::User account menu-->
                     <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
@@ -101,7 +133,7 @@
                             <div class="menu-content d-flex align-items-center px-3">
                                 <!--begin::Avatar-->
                                 <div class="symbol symbol-50px me-5">
-                                    <img alt="Logo" src="{{ asset ('media/avatars/undipp.png')}}" />
+                                    <img alt="Logo" src="{{ asset ('media/avatars/gifhar.png')}}" />
                                 </div>
                                 <!--end::Avatar-->
                                 <!--begin::Username-->
@@ -223,7 +255,7 @@
                         <!--end::Menu item-->
                         <!--begin::Menu item-->
                         <div class="menu-item px-5">
-                            <a href="../dist/authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign Out</a>
+                            <a href=" {{ route('login') }}" class="menu-link px-5">Sign Out</a>
                         </div>
                         <!--end::Menu item-->
                     </div>
@@ -234,7 +266,7 @@
                 <!--begin::Action-->
                 <div class="app-navbar-item ms-3 ms-lg-4 me-lg-6">
                     <!--begin::Link-->
-                    <a href="../dist/authentication/sign-in/basic.html" class="btn btn-icon btn-custom btn-color-gray-600 btn-active-color-primary w-35px h-35px w-md-40px h-md-40px">
+                    <a href=" {{ route('login') }}" class="btn btn-icon btn-custom btn-color-gray-600 btn-active-color-primary w-35px h-35px w-md-40px h-md-40px">
                         <i class="ki-duotone ki-setting-3 fs-1">
                             <span class="path1"></span>
                             <span class="path2"></span>

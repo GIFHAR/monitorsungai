@@ -133,17 +133,172 @@ License: For each use you must have a valid license purchased only from above li
 													<div class="px-9 mb-5">
 														<!--begin::Statistics-->
 														<div class="d-flex mb-2">
-															<span class="fs-4 fw-semibold text-gray-400 me-1">$</span>
-															<span class="fs-2hx fw-bold text-gray-800 me-2 lh-1 ls-n2">14,094</span>
+															<span class="fs-4 fw-semibold text-gray-400 me-1">=</span>
+															<span class="fs-2hx fw-bold text-gray-800 me-2 lh-1 ls-n2">13</span>
 														</div>
 														<!--end::Statistics-->
 														<!--begin::Description-->
-														<span class="fs-6 fw-semibold text-gray-400">Another $48,346 to Goal</span>
+														<span class="fs-6 fw-semibold text-gray-400">kurang 2 lagi untuk ideal</span>
 														<!--end::Description-->
 													</div>
 													<!--end::Statistics-->
 													<!--begin::Chart-->
-													<div id="kt_charts_widget_3" class="min-h-auto ps-4 pe-6" style="height: 300px"></div>
+
+                                                    <div id="kt_charts_widget_3" style="min-height: 300px;"></div>
+                                                    <script src="{{ asset('js/widgets.bundle.js') }}"></script>
+
+
+                                                    <script>
+                                                    document.addEventListener("DOMContentLoaded", () => {
+
+
+                                                    var height = parseInt(KTUtil.css(element, 'height'));
+                                                    var labelColor = KTUtil.getCssVariableValue('--bs-gray-500');
+                                                    var borderColor = KTUtil.getCssVariableValue('--bs-border-dashed-color');
+                                                    var baseColor = KTUtil.getCssVariableValue('--bs-success');
+                                                    var lightColor = KTUtil.getCssVariableValue('--bs-success');
+
+                                                    var options = {
+                                                        series: [{
+                                                            name: 'Nilai PH',
+                                                            data: [18, 18, 20, 20, 18, 18, 22, 22, 20, 20, 18, 18, 20, 20, 18, 18, 20, 20, 22]
+                                                        }],
+                                                        chart: {
+                                                            fontFamily: 'inherit',
+                                                            type: 'area',
+                                                            height: height,
+                                                            toolbar: {
+                                                                show: false
+                                                            }
+                                                        },
+                                                        plotOptions: {
+
+                                                        },
+                                                        legend: {
+                                                            show: false
+                                                        },
+                                                        dataLabels: {
+                                                            enabled: false
+                                                        },
+                                                        fill: {
+                                                            type: "gradient",
+                                                            gradient: {
+                                                                shadeIntensity: 1,
+                                                                opacityFrom: 0.4,
+                                                                opacityTo: 0,
+                                                                stops: [0, 80, 100]
+                                                            }
+                                                        },
+                                                        stroke: {
+                                                            curve: 'smooth',
+                                                            show: true,
+                                                            width: 3,
+                                                            colors: [baseColor]
+                                                        },
+                                                        xaxis: {
+                                                            categories: ['', '11:05', '11:06', '11:07', '11:08', '11:09', '11:10', '11:11', '11:12', '11:13', '11:14', '11:15', '11:16', '11:17', '11:18', '11:19', '11:20', '11:21', ''],
+                                                            axisBorder: {
+                                                                show: false,
+                                                            },
+                                                            axisTicks: {
+                                                                show: false
+                                                            },
+                                                            tickAmount: 6,
+                                                            labels: {
+                                                                rotate: 0,
+                                                                rotateAlways: true,
+                                                                style: {
+                                                                    colors: labelColor,
+                                                                    fontSize: '12px'
+                                                                }
+                                                            },
+                                                            crosshairs: {
+                                                                position: 'front',
+                                                                stroke: {
+                                                                    color: baseColor,
+                                                                    width: 1,
+                                                                    dashArray: 3
+                                                                }
+                                                            },
+                                                            tooltip: {
+                                                                enabled: true,
+                                                                formatter: undefined,
+                                                                offsetY: 0,
+                                                                style: {
+                                                                    fontSize: '12px'
+                                                                }
+                                                            }
+                                                        },
+                                                        yaxis: {
+                                                            tickAmount: 4,
+                                                            max: 24,
+                                                            min: 10,
+                                                            labels: {
+                                                                style: {
+                                                                    colors: labelColor,
+                                                                    fontSize: '12px'
+                                                                },
+                                                                formatter: function(val) {
+                                                                    return val
+                                                                }
+                                                            }
+                                                        },
+                                                        states: {
+                                                            normal: {
+                                                                filter: {
+                                                                    type: 'none',
+                                                                    value: 0
+                                                                }
+                                                            },
+                                                            hover: {
+                                                                filter: {
+                                                                    type: 'none',
+                                                                    value: 0
+                                                                }
+                                                            },
+                                                            active: {
+                                                                allowMultipleDataPointsSelection: false,
+                                                                filter: {
+                                                                    type: 'none',
+                                                                    value: 0
+                                                                }
+                                                            }
+                                                        },
+                                                        tooltip: {
+                                                            style: {
+                                                                fontSize: '12px'
+                                                            },
+                                                            y: {
+                                                                formatter: function(val) {
+                                                                    return val
+                                                                }
+                                                            }
+                                                        },
+                                                        colors: [lightColor],
+                                                        grid: {
+                                                            borderColor: borderColor,
+                                                            strokeDashArray: 4,
+                                                            yaxis: {
+                                                                lines: {
+                                                                    show: true
+                                                                }
+                                                            }
+                                                        },
+                                                        markers: {
+                                                            strokeColor: baseColor,
+                                                            strokeWidth: 3
+                                                        }
+                                                    };
+                                                    var chart = new ApexCharts(element, options);
+                                                    chart.render();
+
+                                                    }
+                                                    );
+                                                    </script>
+
+
+
+
 													<!--end::Chart-->
 												</div>
 												<!--end::Card body-->
@@ -186,6 +341,7 @@ License: For each use you must have a valid license purchased only from above li
 		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
 		<script src="{{asset('plugins/global/plugins.bundle.js')}}"></script>
 		<script src="{{asset('js/scripts.bundle.js')}}"></script>
+
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Vendors Javascript(used for this page only)-->
 		<script src="{{asset('plugins/custom/fullcalendar/fullcalendar.bundle.js')}}"></script>

@@ -17,7 +17,7 @@
                             <span class="path4"></span>
                         </i>
                     </span>
-                    <span class="menu-title">Dashboards</span>
+                    <a href="{{ route('dashboard') }}" class="menu-title">Dashboards</a>
                     {{-- <span class="menu-arrow"></span> --}}
                 </span>
                 <!--end:Menu link-->
@@ -35,7 +35,7 @@
                             <span class="path3"></span>
                         </i>
                     </span>
-                    <span class="menu-title">PH</span>
+                    <a href="{{ route('ph') }}" class="menu-title">PH</a>
                     {{-- <span class="menu-arrow"></span> --}}
                 </span>
                 <!--end:Menu link-->
@@ -53,7 +53,7 @@
                             <span class="path3"></span>
                         </i>
                     </span>
-                    <span class="menu-title">DO</span>
+                    <a href="{{ route('do') }}" class="menu-title">DO</a>
                     {{-- <span class="menu-arrow"></span> --}}
                 </span>
                 <!--end:Menu link-->
@@ -70,7 +70,7 @@
                             <span class="path3"></span>
                         </i>
                     </span>
-                    <span class="menu-title">Suhu</span>
+                    <a href="{{ route('suhu') }}"class="menu-title">Suhu</a>
                     {{-- <span class="menu-arrow"></span> --}}
                 </span>
                 <!--end:Menu link-->
@@ -87,7 +87,7 @@
                             <span class="path3"></span>
                         </i>
                     </span>
-                    <span class="menu-title">TDS</span>
+                    <a href="{{ route('tds')}}" class="menu-title">TDS</a>
                     {{-- <span class="menu-arrow"></span> --}}
                 </span>
                 <!--end:Menu link-->
@@ -104,7 +104,7 @@
                             <span class="path2"></span>
                         </i>
                     </span>
-                    <span class="menu-title">Report</span>
+                    <a href="{{ route('report') }}" class="menu-title">Report</a>
                     {{-- <span class="menu-arrow"></span> --}}
                 </span>
                 <!--end:Menu link-->
@@ -121,7 +121,7 @@
                             <span class="path2"></span>
                         </i>
                     </span>
-                    <span class="menu-title">User Management</span>
+                    <a href="{{ route('user') }}" class="menu-title">User Management</a>
                     {{-- <span class="menu-arrow"></span> --}}
                 </span>
                 <!--end:Menu link-->
