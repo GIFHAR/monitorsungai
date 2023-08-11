@@ -78,77 +78,31 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Wrapper-->
 						<div class="w-lg-500px p-10 p-lg-15 mx-auto">
 							<!--begin::Form-->
-							<form class="form w-100" action="{{url('login')}}" method="post">
+							<form class="form w-100" novalidate="novalidate" data-kt-redirect-url="../dist/authentication/sign-in/new-password.html" id="kt_password_reset_form">
 								<!--begin::Heading-->
 								<div class="text-center mb-10">
 									<!--begin::Title-->
-									<h1 class="text-dark mb-3">Sign In to Monitoring Air Sungai</h1>
+									<h1 class="text-dark mb-3">Forgot Password ?</h1>
 									<!--end::Title-->
 									<!--begin::Link-->
-									<div class="text-gray-400 fw-semibold fs-4">New Here?
-									<a href="{{ route('register') }}" class="link-primary fw-bold">Create an Account</a></div>
+									<div class="text-gray-400 fw-semibold fs-4">Enter your email to reset your password.</div>
 									<!--end::Link-->
 								</div>
 								<!--begin::Heading-->
 								<!--begin::Input group-->
-                                @csrf
 								<div class="fv-row mb-10">
-									<!--begin::Label-->
-									<label class="form-label fs-6 fw-bold text-dark">Email</label>
-									<!--end::Label-->
-									<!--begin::Input-->
-									<input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off" />
-									<!--end::Input-->
-                                    @error('email')
-                                <span class="text-red-500">{{ $message }}</span>
-                                @enderror
-								</div>
-								<!--end::Input group-->
-								<!--begin::Input group-->
-								<div class="fv-row mb-10">
-									<!--begin::Wrapper-->
-									<div class="d-flex flex-stack mb-2">
-										<!--begin::Label-->
-										<label class="form-label fw-bold text-dark fs-6 mb-0">Password</label>
-										<!--end::Label-->
-										<!--begin::Link-->
-										<a href="{{ route ('forgotpassword')}}" class="link-primary fs-6 fw-bold">Forgot Password ?</a>
-										<!--end::Link-->
-									</div>
-									<!--end::Wrapper-->
-									<!--begin::Input-->
-									<input class="form-control form-control-lg form-control-solid" type="password" name="password" autocomplete="off" />
-									<!--end::Input-->
-                                    @error('password')
-                                <span class="text-red-500">{{ $message }}</span>
-                                @enderror
+									<label class="form-label fw-bold text-gray-900 fs-6">Email</label>
+									<input class="form-control form-control-solid" type="email" placeholder="" name="email" autocomplete="off" />
 								</div>
 								<!--end::Input group-->
 								<!--begin::Actions-->
-								<div class="text-center">
-									<!--begin::Submit button-->
-									<button type="submit" class="btn btn-lg btn-primary w-100 mb-5">
-										<span class="indicator-label">Continue</span>
+								<div class="d-flex flex-wrap justify-content-center pb-lg-0">
+									<button type="button" id="kt_password_reset_submit" class="btn btn-lg btn-primary fw-bold me-4">
+										<span class="indicator-label">Submit</span>
 										<span class="indicator-progress">Please wait...
 										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 									</button>
-									<!--end::Submit button-->
-									<!--begin::Separator-->
-									<div class="text-center text-muted text-uppercase fw-bold mb-5">or</div>
-									<!--end::Separator-->
-									<!--begin::Google link-->
-									<a href="#" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
-									<img alt="Logo" src="{{asset ('media/svg/brand-logos/google-icon.svg')}}" class="h-20px me-3" />Continue with Google</a>
-									<!--end::Google link-->
-									<!--begin::Google link-->
-									<a href="#" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">
-									<img alt="Logo" src="{{asset ('media/svg/brand-logos/facebook-4.svg')}}" class="h-20px me-3" />Continue with Facebook</a>
-									<!--end::Google link-->
-									<!--begin::Google link-->
-									<a href="#" class="btn btn-flex flex-center btn-light btn-lg w-100">
-									<img alt="Logo" src="{{asset ('media/svg/brand-logos/apple-black.svg')}}" class="theme-light-show h-20px me-3" />
-									<img alt="Logo" src="{{asset ('media/svg/brand-logos/apple-black-dark.svg')}}" class="theme-dark-show h-20px me-3" />Continue with Apple</a>
-									<!--end::Google link-->
+									<a href="{{route ('login')}}" class="btn btn-lg btn-light-primary fw-bold">Cancel</a>
 								</div>
 								<!--end::Actions-->
 							</form>

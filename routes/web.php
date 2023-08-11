@@ -40,6 +40,7 @@ Route::delete('/users/{user}', 'App\Http\Controllers\UserController@destroy')->n
 Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login', 'App\Http\Controllers\Auth\LoginController@login');
 
+Route::get('/forgotpassword', 'App\Http\Controllers\Auth\ForgotPasswordController@forgotpassword')->name('forgotpassword');
 
 Route::get('/register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('/register', 'App\Http\Controllers\Auth\RegisterController@registerAction')->name('register');
