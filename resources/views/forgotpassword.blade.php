@@ -78,8 +78,20 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Wrapper-->
 						<div class="w-lg-500px p-10 p-lg-15 mx-auto">
 							<!--begin::Form-->
-							<form class="form w-100" novalidate="novalidate" data-kt-redirect-url="../dist/authentication/sign-in/new-password.html" id="kt_password_reset_form">
-								<!--begin::Heading-->
+							<form class="form w-100" action="{{ route ('password.email')}}" method= "post">
+                                @csrf
+								@if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $errors)
+                                                <li>{{$error}} </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+
+                                <!--begin::Heading-->
 								<div class="text-center mb-10">
 									<!--begin::Title-->
 									<h1 class="text-dark mb-3">Forgot Password ?</h1>
@@ -97,7 +109,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--end::Input group-->
 								<!--begin::Actions-->
 								<div class="d-flex flex-wrap justify-content-center pb-lg-0">
-									<button type="button" id="kt_password_reset_submit" class="btn btn-lg btn-primary fw-bold me-4">
+									<button type="submit" class="btn btn-lg btn-primary fw-bold me-4">
 										<span class="indicator-label">Submit</span>
 										<span class="indicator-progress">Please wait...
 										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>

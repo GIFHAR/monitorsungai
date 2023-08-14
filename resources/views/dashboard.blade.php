@@ -96,7 +96,10 @@ License: For each use you must have a valid license purchased only from above li
 										</div>
 										<!--end::Page title-->
 										<!--begin::Actions-->
-										<a href="#" class="btn btn-sm btn-success ms-3 px-4 py-3" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Donwload Report</a>
+										<!-- Include your view content here -->
+
+                                        <a href="{{ route('export.data') }}" class="btn btn-success">Download Report</a>
+
 										<!--end::Actions-->
 									</div>
 									<!--end::Toolbar wrapper-->
@@ -130,7 +133,7 @@ License: For each use you must have a valid license purchased only from above li
 															<i class="ki-duotone ki-arrow-down fs-5 text-danger ms-n1">
 																<span class="path1"></span>
 																<span class="path2"></span>
-															</i>.2%</span>
+															</i>0.2%</span>
 															<!--end::Badge-->
 														</div>
 														<!--end::Info-->
@@ -179,7 +182,7 @@ License: For each use you must have a valid license purchased only from above li
 															<i class="ki-duotone ki-arrow-down fs-5 text-danger ms-n1">
 																<span class="path1"></span>
 																<span class="path2"></span>
-															</i>.2%</span>
+															</i>0.2%</span>
 															<!--end::Badge-->
 														</div>
 														<!--end::Info-->
@@ -235,7 +238,7 @@ License: For each use you must have a valid license purchased only from above li
 															<i class="ki-duotone ki-arrow-down fs-5 text-danger ms-n1">
 																<span class="path1"></span>
 																<span class="path2"></span>
-															</i>.2%</span>
+															</i>0.2%</span>
 															<!--end::Badge-->
 														</div>
 														<!--end::Info-->
@@ -284,7 +287,7 @@ License: For each use you must have a valid license purchased only from above li
 															<i class="ki-duotone ki-arrow-down fs-5 text-danger ms-n1">
 																<span class="path1"></span>
 																<span class="path2"></span>
-															</i>.2%</span>
+															</i>0.2%</span>
 															<!--end::Badge-->
 														</div>
 														<!--end::Info-->

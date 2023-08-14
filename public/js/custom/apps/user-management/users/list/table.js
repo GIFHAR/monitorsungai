@@ -1,6 +1,6 @@
 "use strict";
 
-var KTUsersList = function () {
+var KTUsersList = function() {
     // Define shared variables
     var table = document.getElementById('kt_table_users');
     var datatable;
@@ -9,7 +9,7 @@ var KTUsersList = function () {
     var selectedCount;
 
     // Private functions
-    var initUserTable = function () {
+    var initUserTable = function() {
         // Set date data order
         const tableRows = table.querySelectorAll('tbody tr');
 
@@ -56,12 +56,12 @@ var KTUsersList = function () {
             "lengthChange": false,
             'columnDefs': [
                 { orderable: false, targets: 0 }, // Disable ordering on column 0 (checkbox)
-                { orderable: false, targets: 6 }, // Disable ordering on column 6 (actions)                
+                { orderable: false, targets: 5 }, // Disable ordering on column 6 (actions)
             ]
         });
 
         // Re-init functions on every table re-draw -- more info: https://datatables.net/reference/event/draw
-        datatable.on('draw', function () {
+        datatable.on('draw', function() {
             initToggleToolbar();
             handleDeleteRows();
             toggleToolbars();
@@ -71,7 +71,7 @@ var KTUsersList = function () {
     // Search Datatable --- official docs reference: https://datatables.net/reference/api/search()
     var handleSearchDatatable = () => {
         const filterSearch = document.querySelector('[data-kt-user-table-filter="search"]');
-        filterSearch.addEventListener('keyup', function (e) {
+        filterSearch.addEventListener('keyup', function(e) {
             datatable.search(e.target.value).draw();
         });
     }
@@ -84,7 +84,7 @@ var KTUsersList = function () {
         const selectOptions = filterForm.querySelectorAll('select');
 
         // Filter datatable on submit
-        filterButton.addEventListener('click', function () {
+        filterButton.addEventListener('click', function() {
             var filterString = '';
 
             // Get filter values
@@ -110,7 +110,7 @@ var KTUsersList = function () {
         const resetButton = document.querySelector('[data-kt-user-table-filter="reset"]');
 
         // Reset datatable
-        resetButton.addEventListener('click', function () {
+        resetButton.addEventListener('click', function() {
             // Select filter options
             const filterForm = document.querySelector('[data-kt-user-table-filter="form"]');
             const selectOptions = filterForm.querySelectorAll('select');
@@ -133,7 +133,7 @@ var KTUsersList = function () {
 
         deleteButtons.forEach(d => {
             // Delete button on click
-            d.addEventListener('click', function (e) {
+            d.addEventListener('click', function(e) {
                 e.preventDefault();
 
                 // Select parent row
@@ -154,7 +154,7 @@ var KTUsersList = function () {
                         confirmButton: "btn fw-bold btn-danger",
                         cancelButton: "btn fw-bold btn-active-light-primary"
                     }
-                }).then(function (result) {
+                }).then(function(result) {
                     if (result.value) {
                         Swal.fire({
                             text: "You have deleted " + userName + "!.",
@@ -164,10 +164,10 @@ var KTUsersList = function () {
                             customClass: {
                                 confirmButton: "btn fw-bold btn-primary",
                             }
-                        }).then(function () {
+                        }).then(function() {
                             // Remove current row
                             datatable.row($(parent)).remove().draw();
-                        }).then(function () {
+                        }).then(function() {
                             // Detect checked checkboxes
                             toggleToolbars();
                         });
@@ -202,15 +202,15 @@ var KTUsersList = function () {
         // Toggle delete selected toolbar
         checkboxes.forEach(c => {
             // Checkbox on click event
-            c.addEventListener('click', function () {
-                setTimeout(function () {
+            c.addEventListener('click', function() {
+                setTimeout(function() {
                     toggleToolbars();
                 }, 50);
             });
         });
 
         // Deleted selected rows
-        deleteSelected.addEventListener('click', function () {
+        deleteSelected.addEventListener('click', function() {
             // SweetAlert2 pop up --- official docs reference: https://sweetalert2.github.io/
             Swal.fire({
                 text: "Are you sure you want to delete selected customers?",
@@ -223,7 +223,7 @@ var KTUsersList = function () {
                     confirmButton: "btn fw-bold btn-danger",
                     cancelButton: "btn fw-bold btn-active-light-primary"
                 }
-            }).then(function (result) {
+            }).then(function(result) {
                 if (result.value) {
                     Swal.fire({
                         text: "You have deleted all selected customers!.",
@@ -233,7 +233,7 @@ var KTUsersList = function () {
                         customClass: {
                             confirmButton: "btn fw-bold btn-primary",
                         }
-                    }).then(function () {
+                    }).then(function() {
                         // Remove all selected customers
                         checkboxes.forEach(c => {
                             if (c.checked) {
@@ -244,7 +244,7 @@ var KTUsersList = function () {
                         // Remove header checked box
                         const headerCheckbox = table.querySelectorAll('[type="checkbox"]')[0];
                         headerCheckbox.checked = false;
-                    }).then(function () {
+                    }).then(function() {
                         toggleToolbars(); // Detect checked checkboxes
                         initToggleToolbar(); // Re-init toolbar to recalculate checkboxes
                     });
@@ -265,7 +265,7 @@ var KTUsersList = function () {
 
     // Toggle toolbars
     const toggleToolbars = () => {
-        // Select refreshed checkbox DOM elements 
+        // Select refreshed checkbox DOM elements
         const allCheckboxes = table.querySelectorAll('tbody [type="checkbox"]');
 
         // Detect checkboxes state & count
@@ -292,8 +292,8 @@ var KTUsersList = function () {
     }
 
     return {
-        // Public functions  
-        init: function () {
+        // Public functions
+        init: function() {
             if (!table) {
                 return;
             }
@@ -310,6 +310,6 @@ var KTUsersList = function () {
 }();
 
 // On document ready
-KTUtil.onDOMContentLoaded(function () {
+KTUtil.onDOMContentLoaded(function() {
     KTUsersList.init();
 });
