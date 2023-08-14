@@ -83,8 +83,8 @@ License: For each use you must have a valid license purchased only from above li
 								@if ($errors->any())
                                     <div class="alert alert-danger">
                                         <ul>
-                                            @foreach ($errors->all() as $errors)
-                                                <li>{{$error}} </li>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
                                             @endforeach
                                         </ul>
                                     </div>
